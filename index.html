@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Este bloque HEAD sirve para configurar el documento antes de mostrarlo:
+     define el idioma, el título de la pestaña, cómo se ve en celular
+     y carga las fuentes y el archivo de estilos que usa la página. -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mantenimiento y Aseguramiento de la Operación del Sistema Informático" />
+  <title>Mantenimiento de Sistemas Informáticos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Esta barra sirve para mostrarle al usuario cuánto ha leído de la página.
+       Empieza invisible y JavaScript la va llenando conforme se hace scroll hacia abajo. -->
+  <div id="progress-bar"></div>
+
+
+  <!-- Este bloque HEADER sirve como barra de navegación fija en la parte superior.
+       Siempre se queda visible aunque el usuario haga scroll.
+       Contiene el nombre del sitio y los enlaces que llevan a cada sección. -->
+  <header>
+    <div class="nav-logo">⚙ SIST.INFO <span>// Mantenimiento</span></div>
+
+    <!-- Este botón sirve para abrir y cerrar el menú en celulares.
+         En pantallas grandes está oculto y solo aparece en pantallas pequeñas. -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Esta lista sirve como el menú de navegación.
+         Cada enlace lleva al usuario directamente a una sección de la página. -->
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#tipos">Tipos</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#procedimientos">Procedimientos</a></li>
+        <li><a href="#seguridad">Seguridad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Esta sección HERO sirve como portada principal del sitio.
+       Es lo primero que ve el usuario al entrar. Muestra el título del módulo,
+       una descripción, dos botones para ir a otras secciones
+       y tres datos estadísticos importantes del contenido. -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+
+      <!-- Este badge sirve para identificar visualmente a qué módulo pertenece la página. -->
+      <div class="hero-badge">Módulo de Sistemas Informáticos</div>
+
+      <!-- Este título sirve para presentar el tema central del sitio. -->
+      <h1>Mantenimiento y <em>Aseguramiento</em><br>de la Operación del Sistema</h1>
+
+      <!-- Este párrafo sirve para darle al usuario un resumen rápido de qué trata el módulo. -->
+      <p>Actividades técnicas y administrativas para garantizar el funcionamiento continuo, seguro y eficiente de los sistemas informáticos en una organización.</p>
+
+      <!-- Estos botones sirven para llevar al usuario directamente a las secciones más importantes. -->
+      <div class="hero-buttons">
+        <a href="#tipos" class="btn-primary">Explorar Contenido</a>
+        <a href="#procedimientos" class="btn-secondary">Ver Procedimientos</a>
+      </div>
+
+      <!-- Este bloque de estadísticas sirve para mostrar datos clave del módulo de un vistazo. -->
+      <div class="hero-stats">
+        <div class="stat-item"><strong>4</strong><span>Tipos de Mantenimiento</span></div>
+        <div class="stat-item"><strong>70%</strong><span>Reducción de Fallos</span></div>
+        <div class="stat-item"><strong>99.9%</strong><span>Disponibilidad Objetivo</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Esta línea sirve para separar visualmente una sección de la siguiente. -->
+  <div class="section-divider"></div>
+
+
+  <!-- Esta sección TIPOS sirve para explicar los 4 tipos de mantenimiento
+       que existen en sistemas informáticos, cada uno en su propia tarjeta. -->
+  <section id="tipos">
+
+    <!-- Este encabezado sirve para introducir la sección con un número, título y descripción breve. -->
+    <div class="section-header">
+      <span class="section-tag">// 01 — Clasificación</span>
+      <h2>Tipos de Mantenimiento</h2>
+      <p>Cada tipo cumple una función específica dentro del ciclo de vida del sistema informático.</p>
+    </div>
+
+    <!-- Este grid sirve para organizar las 4 tarjetas en columnas que se adaptan al tamaño de pantalla. -->
+    <div class="types-grid">
+
+      <!-- Esta tarjeta sirve para explicar el mantenimiento PREVENTIVO:
+           el que se hace antes de que ocurra cualquier falla. -->
+      <div class="type-card">
+        <span class="type-badge">Preventivo</span>
+        <span class="type-icon">🛡️</span>
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Acciones programadas para prevenir fallos: limpieza de hardware, actualizaciones, revisión de logs y respaldos periódicos.</p>
+        <ul><li>Limpieza física de componentes</li><li>Actualización de antivirus y SO</li><li>Verificación de copias de seguridad</li><li>Monitoreo de temperatura</li></ul>
+      </div>
+
+      <!-- Esta tarjeta sirve para explicar el mantenimiento CORRECTIVO:
+           el que se aplica después de que ya ocurrió una falla. -->
+      <div class="type-card" style="--card-accent: var(--blue)">
+        <span class="type-badge blue">Correctivo</span>
+        <span class="type-icon">🔧</span>
+        <h3>Mantenimiento Correctivo</h3>
+        <p>Intervención ante fallos ocurridos. Puede ser <strong>inmediato</strong> (crítico) o <strong>diferido</strong> (no urgente).</p>
+        <ul><li>Diagnóstico de la falla</li><li>Reemplazo de componentes</li><li>Restauración desde backups</li><li>Pruebas post-reparación</li></ul>
+      </div>
+
+      <!-- Esta tarjeta sirve para explicar el mantenimiento PREDICTIVO:
+           el que usa datos y monitoreo para anticipar fallas antes de que pasen. -->
+      <div class="type-card" style="--card-accent: var(--orange)">
+        <span class="type-badge orange">Predictivo</span>
+        <span class="type-icon">📊</span>
+        <h3>Mantenimiento Predictivo</h3>
+        <p>Monitoreo continuo con métricas y sensores para anticipar posibles fallos antes de que se produzcan interrupciones.</p>
+        <ul><li>Análisis S.M.A.R.T. en discos</li><li>Monitoreo de temperatura</li><li>Análisis de tendencias</li><li>Alertas por umbrales</li></ul>
+      </div>
+
+      <!-- Esta tarjeta sirve para explicar el mantenimiento EVOLUTIVO:
+           el que mejora o actualiza el sistema para adaptarse a nuevas necesidades. -->
+      <div class="type-card" style="--card-accent: #a855f7">
+        <span class="type-badge purple">Evolutivo</span>
+        <span class="type-icon">🚀</span>
+        <h3>Mantenimiento Evolutivo</h3>
+        <p>Actualizaciones y mejoras estratégicas para satisfacer nuevos requerimientos funcionales, tecnológicos o de seguridad.</p>
+        <ul><li>Migraciones de plataforma</li><li>Actualización de arquitectura</li><li>Nuevas funcionalidades</li><li>Optimización de procesos</li></ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- Esta sección HERRAMIENTAS sirve para mostrar el software más usado
+       en el mantenimiento de sistemas, junto con comandos reales de consola. -->
+  <section id="herramientas">
+
+    <div class="section-header">
+      <span class="section-tag">// 02 — Arsenal Técnico</span>
+      <h2>Herramientas de Mantenimiento</h2>
+      <p>Software esencial para diagnosticar, monitorear y mantener los sistemas en óptimas condiciones.</p>
+    </div>
+
+    <!-- Este contenedor sirve para colocar la lista de herramientas y la terminal lado a lado. -->
+    <div class="tools-layout">
+
+      <!-- Esta lista sirve para mostrar cada herramienta con su ícono y una descripción corta. -->
+      <div class="tools-list">
+        <div class="tool-item"><span class="tool-icon">💿</span><div><strong>CrystalDiskInfo</strong><span>Diagnóstico S.M.A.R.T. de discos duros y SSD</span></div></div>
+        <div class="tool-item"><span class="tool-icon">🌡️</span><div><strong>HWMonitor / HWiNFO</strong><span>Monitoreo de temperatura, voltajes y RPM</span></div></div>
+        <div class="tool-item"><span class="tool-icon">🧹</span><div><strong>CCleaner / BleachBit</strong><span>Limpieza de archivos temporales y registro</span></div></div>
+        <div class="tool-item"><span class="tool-icon">🌐</span><div><strong>Wireshark</strong><span>Análisis de tráfico de red y detección de anomalías</span></div></div>
+        <div class="tool-item"><span class="tool-icon">🛡️</span><div><strong>Malwarebytes / Defender</strong><span>Detección y eliminación de malware</span></div></div>
+        <div class="tool-item"><span class="tool-icon">💾</span><div><strong>Veeam / Acronis</strong><span>Copias de seguridad y recuperación ante desastres</span></div></div>
+      </div>
+
+      <!-- Esta terminal sirve para mostrar comandos reales que se usan en el mantenimiento,
+           con apariencia de consola para que se vea más técnico y profesional. -->
+      <div class="terminal-box">
+        <!-- Esta barra sirve para decorar la terminal con el estilo de ventana de sistema operativo. -->
+        <div class="terminal-header">
+          <div class="dot red"></div><div class="dot yellow"></div><div class="dot green-dot"></div>
+          <span class="terminal-title">bash — mantenimiento.sh</span>
+        </div>
+        <!-- Este cuerpo sirve para mostrar los comandos y sus resultados simulados. -->
+        <div class="terminal-body">
+          <div><span class="comment"># Script de diagnóstico rápido del sistema</span></div>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd">smartctl -a /dev/sda</span></div>
+          <span class="output">→ Verificando salud del disco (S.M.A.R.T.)</span>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd">free -h</span></div>
+          <span class="output">→ Memoria: 8GB / 16GB usados (50%)</span>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd">journalctl -p err -n 50</span></div>
+          <span class="output">→ Últimos 50 errores del sistema</span>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd">apt update && apt upgrade -y</span></div>
+          <span class="output">→ Actualizando paquetes del sistema...</span>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd">ss -tlnp</span></div>
+          <span class="output">→ Puertos TCP en escucha</span>
+          <div><span class="prompt">admin@server:~$ </span><span class="cmd" style="border-right:2px solid var(--green);animation:blink 1s step-end infinite;">_</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- Esta sección PROCEDIMIENTOS sirve para guiar al usuario paso a paso
+       sobre cómo ejecutar correctamente un proceso de mantenimiento,
+       mostrado como una línea de tiempo vertical numerada. -->
+  <section id="procedimientos">
+
+    <div class="section-header">
+      <span class="section-tag">// 03 — Protocolo de Acción</span>
+      <h2>Procedimientos de Mantenimiento</h2>
+      <p>Protocolo estándar para ejecutar un mantenimiento integral y documentado.</p>
+    </div>
+
+    <!-- Esta línea de tiempo sirve para mostrar los pasos en orden con una línea vertical que los conecta. -->
+    <div class="procedure-timeline">
+
+      <!-- Cada uno de estos pasos sirve para describir una etapa del proceso de mantenimiento,
+           con su número, título, descripción y etiquetas de tiempo y responsable. -->
+
+      <div class="procedure-step">
+        <div class="step-number">01</div>
+        <h3>Planificación y Programación</h3>
+        <p>Definir alcance, sistemas afectados, ventana de mantenimiento y checklist de actividades para minimizar impacto en usuarios.</p>
+        <div class="step-meta"><span class="step-tag">⏱ 2-4 horas</span><span class="step-tag">👤 Admin TI</span><span class="step-tag">📋 Documentar</span></div>
+      </div>
+
+      <div class="procedure-step">
+        <div class="step-number">02</div>
+        <h3>Respaldo y Verificación de Datos</h3>
+        <p>Realizar copias de seguridad completas y verificar su integridad restaurando una muestra en entorno de pruebas.</p>
+        <div class="step-meta"><span class="step-tag">⏱ 1-6 horas</span><span class="step-tag">🔴 Crítico</span><span class="step-tag">✅ Verificar backup</span></div>
+      </div>
+
+      <div class="procedure-step">
+        <div class="step-number">03</div>
+        <h3>Diagnóstico del Sistema</h3>
+        <p>Ejecutar herramientas para evaluar estado de hardware (disco, RAM, CPU) y software (logs, servicios, recursos). Documentar hallazgos.</p>
+        <div class="step-meta"><span class="step-tag">⏱ 30-90 min</span><span class="step-tag">🔍 Análisis</span><span class="step-tag">📸 Capturas</span></div>
+      </div>
+
+      <div class="procedure-step">
+        <div class="step-number">04</div>
+        <h3>Ejecución de Tareas</h3>
+        <p>Limpieza física, actualización de SO y software, optimización de BD, revisión de permisos y políticas de seguridad.</p>
+        <div class="step-meta"><span class="step-tag">⏱ Variable</span><span class="step-tag">🔧 Intervención</span><span class="step-tag">📝 Registro</span></div>
+      </div>
+
+      <div class="procedure-step">
+        <div class="step-number">05</div>
+        <h3>Pruebas y Verificación</h3>
+        <p>Comprobar que sistemas críticos operan correctamente: pruebas de carga, conectividad, servicios y acceso de usuarios.</p>
+        <div class="step-meta"><span class="step-tag">⏱ 1-2 horas</span><span class="step-tag">✅ Validación</span><span class="step-tag">👥 Usuarios</span></div>
+      </div>
+
+      <div class="procedure-step">
+        <div class="step-number">06</div>
+        <h3>Documentación y Cierre</h3>
+        <p>Registrar fecha, duración, técnico, hallazgos, acciones y estado final. Programar el próximo mantenimiento preventivo.</p>
+        <div class="step-meta"><span class="step-tag">⏱ 30-60 min</span><span class="step-tag">📄 Informe</span><span class="step-tag">📅 Próximo mtto.</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- Esta sección SEGURIDAD sirve para mostrar las buenas prácticas de seguridad
+       y las amenazas más comunes que pueden afectar a un sistema informático. -->
+  <section id="seguridad">
+
+    <div class="section-header">
+      <span class="section-tag">// 04 — Aseguramiento</span>
+      <h2>Seguridad y Aseguramiento del Sistema</h2>
+      <p>Medidas técnicas y administrativas para proteger la integridad, confidencialidad y disponibilidad del sistema.</p>
+    </div>
+
+    <!-- Este contenedor sirve para colocar las prácticas y el panel de amenazas lado a lado. -->
+    <div class="security-layout">
+
+      <!-- Esta columna sirve para listar las 5 prácticas de seguridad recomendadas,
+           cada una con su ícono, nombre y explicación. -->
+      <div>
+        <div class="security-item"><span class="security-icon">🔄</span><div><h4>Parches y Actualizaciones</h4><p>Aplicar actualizaciones de seguridad oportunamente. Las vulnerabilidades conocidas son el vector de ataque más común.</p></div></div>
+        <div class="security-item"><span class="security-icon">🔐</span><div><h4>Control de Acceso y Privilegios</h4><p>Principio de mínimo privilegio: cada usuario y servicio debe tener solo los permisos estrictamente necesarios.</p></div></div>
+        <div class="security-item"><span class="security-icon">🔑</span><div><h4>Cifrado de Datos</h4><p>AES-256 para datos en reposo y TLS 1.3 para comunicaciones. Proteger especialmente credenciales y datos sensibles.</p></div></div>
+        <div class="security-item"><span class="security-icon">👁️</span><div><h4>Monitoreo y Auditoría de Logs</h4><p>Implementar SIEM para centralizar y analizar eventos del sistema, detectando comportamientos anómalos en tiempo real.</p></div></div>
+        <div class="security-item"><span class="security-icon">📋</span><div><h4>Plan de Contingencia (DRP)</h4><p>Mantener un Disaster Recovery Plan actualizado y probado. Definir RTO y RPO para cada sistema crítico.</p></div></div>
+      </div>
+
+      <!-- Este panel sirve para mostrar las amenazas más comunes con su nivel de riesgo
+           usando colores: rojo para crítico, naranja para alto y amarillo para medio. -->
+      <div class="security-alert">
+        <div class="alert-header">
+          <span class="alert-icon">⚠️</span>
+          <div><h3>Amenazas Comunes</h3><span>Vectores de ataque más frecuentes en entornos corporativos</span></div>
+        </div>
+        <ul class="threat-list">
+          <li><span class="threat-level critical">CRÍTICO</span><div><strong style="display:block;margin-bottom:0.2rem">Ransomware</strong>Cifra archivos del sistema y exige rescate. Puede paralizar operaciones completas.</div></li>
+          <li><span class="threat-level high">ALTO</span><div><strong style="display:block;margin-bottom:0.2rem">Phishing / Ingeniería Social</strong>Suplantación de identidad para obtener credenciales de acceso a sistemas.</div></li>
+          <li><span class="threat-level high">ALTO</span><div><strong style="display:block;margin-bottom:0.2rem">Vulnerabilidades Sin Parche</strong>Software desactualizado explotable remotamente sin interacción del usuario.</div></li>
+          <li><span class="threat-level medium">MEDIO</span><div><strong style="display:block;margin-bottom:0.2rem">Amenazas Internas</strong>Empleados con acceso que pueden filtrar o sabotear información intencionalmente.</div></li>
+          <li><span class="threat-level medium">MEDIO</span><div><strong style="display:block;margin-bottom:0.2rem">Ataques DDoS</strong>Saturación de recursos del servidor causando denegación de servicio.</div></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+
+  <!-- Esta sección CONTACTO sirve para mostrar información general del módulo
+       y darle al usuario un botón para regresar fácilmente al inicio de la página. -->
+  <section id="contacto">
+
+    <div class="section-header">
+      <span class="section-tag">// 05 — Información</span>
+      <h2>Acerca del Módulo</h2>
+    </div>
+
+    <!-- Esta tarjeta sirve para presentar los datos del proyecto de forma ordenada y visual. -->
+    <div class="contact-card">
+      <h2>Módulo: Sistemas Informáticos</h2>
+      <p>Recurso educativo del módulo de <strong style="color:var(--green)">Mantenimiento y Aseguramiento de la Operación del Sistema Informático</strong>, desarrollado con apoyo de Inteligencia Artificial (Claude by Anthropic).</p>
+
+      <!-- Este grid sirve para mostrar tres datos del módulo en celdas separadas: área, tipo y año. -->
+      <div class="contact-info">
+        <div class="info-cell"><label>Área</label><span>Sistemas Informáticos</span></div>
+        <div class="info-cell"><label>Recurso</label><span>Página Informativa</span></div>
+        <div class="info-cell"><label>Año</label><span>2026</span></div>
+      </div>
+
+      <!-- Este botón sirve para que el usuario regrese al inicio de la página con un scroll suave. -->
+      <a href="#inicio" class="btn-primary">↑ Volver al Inicio</a>
+    </div>
+
+  </section>
+
+
+  <!-- Este footer sirve para mostrar el copyright del proyecto y el crédito de quien lo desarrolló. -->
+  <footer>
+    <p>© 2026 — <strong>Mantenimiento de Sistemas Informáticos</strong> — Recurso Académico</p>
+    <p>Desarrollado con <strong>Claude AI</strong> by Anthropic // HTML + CSS</p>
+  </footer>
+
+
+  <!-- Este bloque de scripts sirve para darle interactividad a la página.
+       Tiene tres funciones: abrir y cerrar el menú en celulares,
+       mover la barra de progreso según el scroll del usuario,
+       y resaltar en el menú el enlace de la sección que se está viendo. -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+    });
+    document.querySelectorAll('nav a').forEach(link =>
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', false);
+      })
+    );
+
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+      progressBar.style.width = (scrollTop / (scrollHeight - clientHeight) * 100) + '%';
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-64px 0px 0px 0px' });
+
+    document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
